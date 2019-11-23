@@ -1,0 +1,61 @@
+<app-paciente-header></app-paciente-header> 
+<ion-list>
+
+    <ion-item>
+      <ion-label position="floating">
+        <h1>Atención Medica</h1>
+      </ion-label>
+
+
+    </ion-item>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="2">
+          <img src="/assets/avatars/av-1.png">
+
+        </ion-col>
+        <ion-col>
+          <ion-item button color="light" (click)="nuevaAtencion()">
+            <h4> Nueva Atención Medica</h4>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
+<ion-list>
+
+    <ion-item>
+      <ion-label position="floating">
+        <h1>Observaciones</h1>
+      </ion-label>
+
+    </ion-item>
+    <ion-slide>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="2">
+            <img src="/assets/avatars/av-3.png">
+
+          </ion-col>
+          <ion-col>
+            <ion-item button color="light" (click)="criterios()">
+              <h4>Con Criterios</h4>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="2">
+            <img src="/assets/avatars/av-4.png">
+
+          </ion-col>
+          <ion-col>
+            <ion-item button color="light" (click)="sinCriterios()">
+              <h4> Sin Criterios</h4>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-list>

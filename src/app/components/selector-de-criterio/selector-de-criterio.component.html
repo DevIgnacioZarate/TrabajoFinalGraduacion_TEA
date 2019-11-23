@@ -1,0 +1,73 @@
+<app-paciente-header></app-paciente-header>
+<form (ngSubmit)="actualizar( fActualizar )" #fActualizar>
+  <ion-list fixed>
+    <!-- <ion-slides fixed class="mainSlide" #slidePrincipal> -->
+
+    <!-- <ion-slide > -->
+    <ion-list *ngIf="!VerCriterioDetalle">
+      <ion-item-divider>
+        <ion-label>
+          <strong>
+            <h1>Tipos de Criterios</h1>
+          </strong>
+        </ion-label>
+      </ion-item-divider>
+      <ion-item button (click)="mostrarCriterio(1)">
+        <ion-label>
+          <h4> Conductual/Emocional</h4>
+        </ion-label>
+      </ion-item>
+      <ion-item button (click)="mostrarCriterio(2)">
+        <ion-label>
+          <h4> Necesidades Basicas</h4>
+        </ion-label>
+      </ion-item>
+      <ion-item button (click)="mostrarCriterio(3)">
+        <ion-label>
+          <h4> Académicas</h4>
+        </ion-label>
+      </ion-item>
+      <ion-item button (click)="mostrarCriterio(4)">
+        <ion-label>
+          <h4> Social</h4>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <!-- <ion-buttons (click) = "OcutarCriterio()" *ngIf="VerCriterioDetalle" slot="start">
+          <ion-label><h1>Back</h1></ion-label>
+        </ion-buttons> -->
+    <app-criterios [opcionesList]="OpcionesEmocional" *ngIf="VerCriterioDetalle && VerCriteriosEmocional">
+    </app-criterios>
+    <app-criterios [opcionesList]="OpcionesNecesidadesBasicas" *ngIf="VerCriterioDetalle && VerCriteriosNecesidades">
+    </app-criterios>
+    <app-criterios [opcionesList]="OpcionesAcademicas" *ngIf="VerCriterioDetalle && VerCriteriosAcademica">
+    </app-criterios>
+    <app-criterios [opcionesList]="OpcionesSocial" *ngIf="VerCriterioDetalle && VerCriteriosSocial"></app-criterios>
+    
+    <ion-item *ngIf="!VerCriterioDetalle">
+        <ion-label position="stacked">Observaciones</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+  </ion-list>
+  <ion-row *ngIf="VerCriterioDetalle">
+    <ion-col text-center>
+      <ion-button color="secondary" shape="round" (click)="OcutarCriterio()">
+        Volver
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!VerCriterioDetalle">
+    <ion-col text-center>
+      <ion-button color="tertiary" shape="round" (click)="cancelar()">
+          Cancelar
+      </ion-button>
+    </ion-col>
+    <ion-col text-center>
+      <ion-button color="tertiary" shape="round" (click)="actualizar()">
+          Registrar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</form>
